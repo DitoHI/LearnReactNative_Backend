@@ -1,0 +1,8 @@
+{
+  "name" : "airbnbClonebackend",
+  "version" : "0.0.1",
+  "description" : "This is the backend for Airbnb React Native Clone",
+  "scripts" : {
+    "start" : "node index.js"
+  }
+}
