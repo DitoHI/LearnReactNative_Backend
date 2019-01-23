@@ -4,7 +4,7 @@ import {
 } from 'graphql';
 
 import ListingModel from '../../../models/listing';
-import listingType from '../listing';
+import listingType from '../../types/listing';
 import listingInputType from '../../types/listing-input';
 
 export default {
@@ -15,9 +15,9 @@ export default {
             type: new GraphQLNonNull(listingInputType)
         }
     },
-    resolve (root, params) {
+    async resolve (root, params) {
         const listingModel = new ListingModel(params.data);
-        const newListing = listingModel.save();
+        const newListing = await listingModel.save();
 
         if (!newListing) {
             throw new Error('Error adding new listing');
@@ -25,4 +25,4 @@ export default {
 
         return newListing;
     }
-}
+};
