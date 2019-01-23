@@ -4,9 +4,14 @@ import {
 } from 'graphql';
 
 import mutations from './mutations';
+import queries from './queries';
 
 export default new GraphQLSchema({
-    mutations: new GraphQLObjectType({
+    query: new GraphQLObjectType({
+        name: 'Query',
+        fields: queries
+    }),
+    mutation: new GraphQLObjectType({
         name: 'Mutation',
         fields: mutations
     })
