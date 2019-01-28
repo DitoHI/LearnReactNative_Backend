@@ -58,3 +58,4 @@ buck-out/
 # custom
 step1.log
 metro-cache/
+src/privateConfig.js
